@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auric Shield Activator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-container">
+        <canvas id="bg-canvas"></canvas>
+
+        <!-- Intro Screen -->
+        <div id="intro-screen" class="screen active">
+            <h1 class="main-title">Auric Shield Activator</h1>
+            <p class="subtitle">An interactive journey to fortify your energetic field.</p>
+            <button id="start-diagnostic-btn" class="main-btn">Begin Diagnostic</button>
+        </div>
+
+        <!-- Diagnostic Screen -->
+        <div id="diagnostic-screen" class="screen">
+            <h2 class="section-title">Auric Diagnostic</h2>
+            <p>First, we must understand the nature of your energy.</p>
+            <div id="diagnostic-content">
+                 <img src="subtle_bodies.png" alt="Diagram of the 7 subtle bodies" class="subtle-bodies-img">
+                 <p class="diagnostic-intro">The human aura is composed of seven subtle bodies, each a layer of your consciousness. A weakness in one can affect the whole. Let's identify your core energetic signature.</p>
+            </div>
+            <div id="quiz-container">
+                <p class="question">When faced with a sudden challenge, your first instinct is to:</p>
+                <div class="answers">
+                    <button class="answer-btn" data-type="earth">Stand firm, rooted in your position, and weather the storm.</button>
+                    <button class="answer-btn" data-type="water">Adapt, flow around the obstacle, and find a new path.</button>
+                    <button class="answer-btn" data-type="air">Analyze from a distance, devise a strategy, and communicate your solution.</button>
+                    <button class="answer-btn" data-type="fire">Act decisively, meet the challenge with passion, and transform the situation.</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shield Construction Screen -->
+        <div id="construction-screen" class="screen">
+            <h2 class="section-title">Shield Construction</h2>
+            <p class="instruction">Weave your energetic shield. Select a color, a symbol, and create your personal sigil of protection.</p>
+            <div class="construction-controls">
+                <div class="control-group">
+                    <h3>1. Choose Your Auric Color</h3>
+                    <div id="color-selector" class="selector-grid">
+                        <div class="color-swatch" data-color="0x4b0082" style="background-color: #4b0082;" title="Indigo"></div>
+                        <div class="color-swatch" data-color="0x8a2be2" style="background-color: #8a2be2;" title="Violet"></div>
+                        <div class="color-swatch" data-color="0xffd700" style="background-color: #ffd700;" title="Gold"></div>
+                        <div class="color-swatch" data-color="0x00ffff" style="background-color: #00ffff;" title="Electric Blue"></div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <h3>2. Choose Your Protective Symbol</h3>
+                    <div id="symbol-selector" class="selector-grid">
+                         <img src="symbol_geom.png" class="symbol-option" data-symbol="symbol_geom.png" alt="Sacred Geometry">
+                         <img src="symbol_eye.png" class="symbol-option" data-symbol="symbol_eye.png" alt="Protective Eye">
+                         <img src="symbol_sigil.png" class="symbol-option" data-symbol="symbol_sigil.png" alt="Protective Sigil">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <h3>3. Generate Your Personal Sigil</h3>
+                    <div id="sigil-generator">
+                        <input type="text" id="sigil-input" placeholder="Enter a name or word">
+                        <button id="generate-sigil-btn">Generate</button>
+                    </div>
+                    <canvas id="sigil-canvas" width="100" height="100"></canvas>
+                </div>
+            </div>
+            <button id="activate-shield-btn" class="main-btn" disabled>Activate Your Shield</button>
+        </div>
+
+        <!-- Activation Screen -->
+        <div id="activation-screen" class="screen">
+            <h2 class="section-title">Activation Complete</h2>
+            <p>Your Auric Shield is fortified. Feel the energy flowing, protecting, and strengthening your being.</p>
+            <p class="final-message">Your energy type is: <strong id="final-energy-type"></strong></p>
+            <button id="restart-btn" class="main-btn">Begin Anew</button>
+        </div>
+
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
